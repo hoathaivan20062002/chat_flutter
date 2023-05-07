@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'chat/you_are_in.dart';
-// import 'languages/localization.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
