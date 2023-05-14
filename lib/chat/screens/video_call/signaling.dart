@@ -10,6 +10,7 @@ class Signaling {
       {
         'urls': [
           'stun:stun2.l.google.com:19302',
+
           ///được sử dụng như một địa chỉ STUN server trong các ứng dụng WebRTC (Web Real-Time Communication).
         ]
       }
@@ -220,22 +221,6 @@ class Signaling {
       remoteStream!.getTracks().forEach((track) => track.stop());
     }
     if (peerConnection != null) peerConnection!.close();
-
-    // if (roomId != null) {
-    //   var db = FirebaseFirestore.instance;
-    //   var roomRef = db.collection('rooms').doc(roomId);
-    //   var calleeCandidates = await roomRef.collection('calleeCandidates').get();
-    //   for (var document in calleeCandidates.docs) {
-    //     document.reference.delete();
-    //   }
-    //
-    //   var callerCandidates = await roomRef.collection('callerCandidates').get();
-    //   for (var document in callerCandidates.docs) {
-    //     document.reference.delete();
-    //   }
-    //
-    //   await roomRef.delete();
-    // }
 
     localStream!.dispose();
     remoteStream?.dispose();

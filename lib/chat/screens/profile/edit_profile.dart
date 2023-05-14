@@ -193,32 +193,6 @@ class _EditProfileState extends State<EditProfile> {
                       },
                       child: showBirthday(selectedDate),
                     ),
-                    // const SizedBox(height: 30),
-                    // textProfile("Gender"),
-                    // const SizedBox(height: 30),
-                    // Row(
-                    //   children: [
-                    //     const Spacer(),
-                    //     genderWidget(
-                    //         currentGender: gender,
-                    //         gender: true,
-                    //         action: () {
-                    //           if (!gender) {
-                    //             setState(() => gender = true);
-                    //           }
-                    //         }),
-                    //     const Spacer(),
-                    //     genderWidget(
-                    //         currentGender: gender,
-                    //         gender: false,
-                    //         action: () {
-                    //           if (gender) {
-                    //             setState(() => gender = false);
-                    //           }
-                    //         }),
-                    //     const Spacer(),
-                    //   ],
-                    // ),
                     const SizedBox(height: 30),
                     CustomButton(
                       onPress: () {
@@ -247,7 +221,6 @@ class _EditProfileState extends State<EditProfile> {
     widget.user.description = descriptionController.text;
     widget.user.address = addressController.text;
     widget.user.phone = phoneController.text;
-    // widget.user.gender = gender;
     widget.user.birthday = selectedDate;
 
     FirebaseFirestore.instance

@@ -3,12 +3,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:chat_app/chat/controllers/user_item.dart';
 import 'package:chat_app/chat/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_sound/flutter_sound.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:get/get.dart';
 import 'bottom_sheet.dart' as bs;
-import '../../../../languages/utils.dart';
+import '../../../../time/utils.dart';
 import '../../../controllers/private_chat.dart';
 import '../../../widgets/active_color.dart';
 

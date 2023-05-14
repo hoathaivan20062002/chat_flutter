@@ -44,7 +44,7 @@ class TitleChat extends StatelessWidget {
                       callDuration: DateTime.now(),
                     ),
                   );
-                  Get.to(VideoCall(chatRoom: chatRoom));
+                  //Get.to(VideoCall(chatRoom: chatRoom));
                 },
                 icon: const Icon(
                   FontAwesomeIcons.phone,
@@ -63,7 +63,7 @@ class TitleChat extends StatelessWidget {
                       callDuration: DateTime.now(),
                     ),
                   );
-                  Get.to(VideoCall(chatRoom: chatRoom));
+                  //Get.to(VideoCall(chatRoom: chatRoom));
                 },
                 icon: const Icon(
                   FontAwesomeIcons.video,

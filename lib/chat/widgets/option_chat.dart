@@ -85,18 +85,6 @@ class _OptionChatState extends State<OptionChat> {
             color: Color.fromARGB(255, 51, 192, 180),
             index: 1,
           ),
-          // itemPopup(
-          //   text: 'Màu sắc',
-          //   icon: FontAwesomeIcons.palette,
-          //   color: const Color.fromRGBO(26, 191, 185, 1),
-          //   index: 2,
-          // ),
-          // itemPopup(
-          //   text: 'Bong bóng chat',
-          //   icon: FontAwesomeIcons.circle,
-          //   color: const Color.fromRGBO(26, 191, 185, 1),
-          //   index: 3,
-          // ),
           itemPopup(
             text: 'Xóa đoạn chat',
             icon: FontAwesomeIcons.trash,

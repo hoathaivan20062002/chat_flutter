@@ -107,61 +107,6 @@ class _ProfileState extends State<Profile> {
                           indent: 10,
                           endIndent: 10,
                         ),
-                        // const SizedBox(height: 20),
-                        // const SizedBox(height: 20),
-                        // InkWell(
-                        //   onTap: () {
-                        //     _showBottomSheet();
-                        //   },
-                        //   child: Row(
-                        //     children: [
-                        //       Container(
-                        //         decoration: BoxDecoration(
-                        //           color: const Color.fromRGBO(233, 116, 81, 1),
-                        //           borderRadius: BorderRadius.circular(90),
-                        //         ),
-                        //         padding: const EdgeInsets.all(10),
-                        //         child: const Icon(
-                        //           Icons.translate_rounded,
-                        //           color: Colors.white,
-                        //         ),
-                        //       ),
-                        //       const SizedBox(width: 10),
-                        //       const Text("Language",
-                        //           style: TextStyle(fontSize: 18)),
-                        //       const Spacer(),
-                        //       const Icon(Icons.arrow_forward_ios_outlined)
-                        //     ],
-                        //   ),
-                        // ),
-                        // const SizedBox(height: 20),
-                        // Row(
-                        //   children: [
-                        //     Container(
-                        //       decoration: BoxDecoration(
-                        //         color: Colors.black87,
-                        //         borderRadius: BorderRadius.circular(90),
-                        //       ),
-                        //       padding: const EdgeInsets.all(10),
-                        //       child: const Icon(
-                        //         FontAwesomeIcons.solidMoon,
-                        //         color: Colors.white,
-                        //       ),
-                        //     ),
-                        //     const SizedBox(width: 10),
-                        //     const Text("Dark Mode",
-                        //         style: TextStyle(fontSize: 18)),
-                        //     const Spacer(),
-                        //     FlutterSwitch(
-                        //       height: 30,
-                        //       width: 60,
-                        //       value: darkMode,
-                        //       onToggle: (value) {
-                        //         setState(() => darkMode = value);
-                        //       },
-                        //     ),
-                        //   ],
-                        // ),
                         const SizedBox(height: 20),
                         Row(
                           children: [
@@ -207,7 +152,7 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ),
                               const SizedBox(width: 10),
-                              const Text("About",
+                              const Text("Thông tin về ứng dụng",
                                   style: TextStyle(fontSize: 18)),
                               const Spacer(),
                               const Icon(Icons.arrow_forward_ios_outlined)

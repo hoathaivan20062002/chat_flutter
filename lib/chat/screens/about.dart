@@ -7,7 +7,8 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("About", style: TextStyle(color: Colors.black)),
+        title: const Text("Thông tin về ứng dụng",
+            style: TextStyle(color: Colors.black)),
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
