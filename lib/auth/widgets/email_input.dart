@@ -20,9 +20,6 @@ class _EmailInputState extends State<EmailInput> {
   Widget build(BuildContext context) {
     return FocusScope(
       onFocusChange: (value) {
-        // focus: true
-        // not focus on any widget: true
-        // focus on other widget: false
         if (value) {
           // reset error text
           widget.errorText.value = null;
@@ -40,10 +37,6 @@ class _EmailInputState extends State<EmailInput> {
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Obx(
           () => TextFormField(
-            // Cant put setState right here
-            // when user not input: no error
-            // when user input and then leave the field empty: no error
-            // when user input and then leave the field with invalid email: error
             validator: (value) {
               if (!isOnFocus && value!.isNotEmpty) {
                 return widget.validator();

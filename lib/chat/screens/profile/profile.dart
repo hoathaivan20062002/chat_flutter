@@ -152,7 +152,7 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ),
                               const SizedBox(width: 10),
-                              const Text("Thông tin về ứng dụng",
+                              const Text("Thông tin ",
                                   style: TextStyle(fontSize: 18)),
                               const Spacer(),
                               const Icon(Icons.arrow_forward_ios_outlined)

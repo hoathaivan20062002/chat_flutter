@@ -35,15 +35,6 @@ class _PrivateChatState extends State<PrivateChat> {
     // TODO: init controller
   }
 
-  // Future initRecorder() async {
-  //   final status = await Permission.microphone.request();
-  //   if (status != PermissionStatus.granted) {
-  //     throw 'error';
-  //   }
-  //   await recorder.openRecorder();
-  //   recorder.setSubscriptionDuration(const Duration(milliseconds: 500));
-  // }
-
   @override
   void dispose() {
     //recorder.closeRecorder();
@@ -191,11 +182,6 @@ class _PrivateChatState extends State<PrivateChat> {
                               ),
                               onPressed: () {
                                 print(_textController.text);
-                                // else if (recorder.isRecording) {
-                                //   stop();
-                                // } else {
-                                //   record();
-                                // }
                               },
                             ),
                           ),
@@ -217,17 +203,6 @@ class _PrivateChatState extends State<PrivateChat> {
       ),
     );
   }
-
-  // Future stop() async {
-  //   final path = await recorder.stopRecorder();
-  //   final audio = File(path!);
-  //   setState(() {});
-  // }
-
-  // Future record() async {
-  //   await recorder.startRecorder(toFile: 'audio');
-  //   setState(() {});
-  // }
 }
 
 class _EmojiPicker extends StatelessWidget {

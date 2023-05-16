@@ -5,8 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'user_item.dart';
 
-// empty chat: listen for currentUser's private_chats[withUser]
-// existing chat: listen for private_chats[chatId]
 class PrivateChatController extends GetxController {
   PrivateChatController(this.withUser) {
     userController = UserItemControllers.inst.getOrCreate(withUser);

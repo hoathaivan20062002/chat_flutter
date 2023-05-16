@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chat_app/auth/widgets/custom_button.dart';
-//import 'package:chat_app/auth/widgets/gender_widget.dart';
 import 'package:chat_app/auth/widgets/show_birthday.dart';
 import 'package:chat_app/chat/controllers/firebase_controllers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

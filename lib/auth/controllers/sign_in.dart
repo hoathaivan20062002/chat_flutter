@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:chat_app/auth/screens/verify_page.dart';
-// import 'package:chat_app/chat/services/user.dart';
 import 'package:chat_app/chat/you_are_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -39,8 +37,6 @@ class SignInController extends GetxController {
 
   var emailErrorText = Rx<String?>(null);
   //#endregion
-
-
 
   var password = ''.obs;
   // Minimum eight characters, at least one letter and one number:
@@ -121,9 +117,6 @@ class SignInController extends GetxController {
         // await _promptUserToVerifyEmail(credentials);
         return;
       }
-
-      // await FbAuth.originalInst?.linkCredentials(email.value);
-      // updateToken();
 
       Get.to(() => const YouAreIn());
     } on FirebaseAuthException catch (e) {

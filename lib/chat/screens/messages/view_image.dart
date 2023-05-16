@@ -45,9 +45,6 @@ class _ViewImageImageState extends State<ViewImage> {
               controller.value = Matrix4.identity()
                 ..translate(-position.dx * 2, -position.dy * 2)
                 ..scale(3.0);
-              // Fox a 2x zoom
-              // ..translate(-position.dx, -position.dy)
-              // ..scale(2.0);
             }
           },
           onDoubleTapDown: (details) {

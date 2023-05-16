@@ -2,7 +2,7 @@ import 'package:chat_app/chat/screens/friends_list/friends.dart';
 // import 'package:chat_app/chat/screens/messages/chat.dart';
 import 'package:chat_app/chat/screens/profile/profile.dart';
 import 'package:chat_app/chat/screens/messages/list_chat.dart';
-import 'package:chat_app/chat/screens/video_call/video_call.dart';
+//import 'package:chat_app/chat/screens/video_call/video_call.dart';
 import 'package:chat_app/chat/services/notification_services.dart';
 import 'package:chat_app/chat/services/user.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -34,52 +34,6 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
   // bool _isLoading = true;
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addObserver(this);
-    // loadUserData(() {
-    //   setState(() => _isLoading = false);
-    //   // setUserActive();
-    // });
-
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Got a message whilst in the foreground!');
-      print('Message data: ${message.data}');
-      Map<String, dynamic> data = message.data;
-
-      if (data["status"] == "video_call") {
-        Get.to(VideoCall(
-          id: data["id"],
-          yourToken: data["token"],
-        ));
-      }
-
-      if (data["screen"] == "chat") {
-        // Navigator.of(context).push(MaterialPageRoute(
-        //   builder: (context) => Chat(chatRoom: chatRoom),
-        // ));
-      } else {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) =>
-              VideoCall(id: data["id"], yourToken: data["token"]),
-        ));
-      }
-
-      if (message.notification != null &&
-          data["status"] != "disable_video_call") {
-        RemoteNotification notification = message.notification!;
-        print('Message also contained a notification: ${message.notification}');
-        NotificationServices.showNotification(
-          id: data["id"].hashCode,
-          title: notification.title!,
-          body: notification.body!,
-          fln: flutterLocalNotificationsPlugin,
-        );
-      }
-    });
-  }
-
-  @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
@@ -97,8 +51,6 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body: PageStorage(
         bucket: bucket,
@@ -120,7 +72,9 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 0
-                      ? FontAwesomeIcons.solidComment  /// trò chuyện icon tasbar
+                      ? FontAwesomeIcons.solidComment
+
+                      /// trò chuyện icon tasbar
                       : FontAwesomeIcons.comment,
                   color: currentTab == 0
                       ? Color.fromARGB(255, 25, 255, 55)
@@ -135,7 +89,9 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 1
-                      ? FontAwesomeIcons.userFriends  /// bạn bè icon tasbar
+                      ? FontAwesomeIcons.userFriends
+
+                      /// bạn bè icon tasbar
                       : FontAwesomeIcons.userFriends,
                   color: currentTab == 1
                       ? Color.fromARGB(255, 25, 255, 55)
@@ -150,7 +106,9 @@ class _YouAreInState extends State<YouAreIn> with WidgetsBindingObserver {
                 },
                 child: Icon(
                   currentTab == 2
-                      ? FontAwesomeIcons.cog  /// cài đặt icon tasbar
+                      ? FontAwesomeIcons.cog
+
+                      /// cài đặt icon tasbar
                       : FontAwesomeIcons.cog,
                   color: currentTab == 2
                       ? Color.fromARGB(255, 25, 255, 55)

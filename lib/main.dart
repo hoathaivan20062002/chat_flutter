@@ -11,7 +11,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'chat/you_are_in.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -19,8 +18,7 @@ void main() async {
   // Transparent status bar, dont need to use SafeArea
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-  // print('currentUser:');
-  // print(FirebaseAuth.instance.currentUser);
+
   NotificationSettings settings =
       await FirebaseMessaging.instance.requestPermission(
     alert: true,
@@ -36,10 +34,8 @@ void main() async {
 
   runApp(
     GetMaterialApp(
-      debugShowCheckedModeBanner: false, // Tắt debug banner góc phải màn hình app
-      // locale: Localization.inst.defaultLocale,
-      // fallbackLocale: Localization.inst.defaultLocale,
-      // translations: Localization.inst,
+      debugShowCheckedModeBanner:
+          false, // Tắt debug banner góc phải màn hình app
       home: const AboutPage(),
     ),
   );

@@ -4,12 +4,9 @@ import 'package:chat_app/chat/you_are_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../services/auth.dart';
 import '../widgets/send_verification_link_button.dart';
 
-// get back: sign out
-// continue: you are in
 class EmailVerification extends StatelessWidget {
   const EmailVerification({Key? key, this.isNewUser = false}) : super(key: key);
   final bool isNewUser;
@@ -24,7 +21,8 @@ class EmailVerification extends StatelessWidget {
             body: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Vui lòng kiểm tra hộp thư của bạn để biết liên kết để đăng nhập'),
+                const Text(
+                    'Vui lòng kiểm tra hộp thư của bạn để biết liên kết để đăng nhập'),
                 const _NeedHelpButton(),
                 ElevatedButton(
                     onPressed: () async {
@@ -32,9 +30,9 @@ class EmailVerification extends StatelessWidget {
                       await FirebaseAuth.instance.currentUser!.reload();
                       if (FirebaseAuth.instance.currentUser!.emailVerified) {
                         if (isNewUser) {
-                          Get.offAll(()=>const CreatePassword());
+                          Get.offAll(() => const CreatePassword());
                         } else {
-                          Get.offAll(()=>const YouAreIn());
+                          Get.offAll(() => const YouAreIn());
                         }
                       } else {
                         Get.snackbar('Lỗi xác thực', 'Vui lòng thử lại');
@@ -48,7 +46,7 @@ class EmailVerification extends StatelessWidget {
 
 Future<bool> _onWillPop() async {
   await Auth.signOut();
-  Get.offAll(()=>const SignIn());
+  Get.offAll(() => const SignIn());
   return true;
 }
 
@@ -66,7 +64,7 @@ class _NeedHelpButton extends StatelessWidget {
             barrierDismissible: false,
             title: 'Hỗ trợ',
             content: Column(children: const [
-              Text('Bạn chưa nhận được EMAIL ,Vui lòng kiểm tra  hộp thư rác'),
+              Text('Bạn chưa nhận được EMAIL ,Vui lòng kiểm tra  hộp thư '),
               Text('Hoặc'),
               SendVerificationLinkButton()
             ]),

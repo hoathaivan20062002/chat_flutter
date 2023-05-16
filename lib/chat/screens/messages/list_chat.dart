@@ -263,25 +263,6 @@ class ListChat extends StatelessWidget {
                 ],
               ),
             ),
-            // InkWell(
-            //   onTap: () => platform.invokeMethod('showBubbleChat'),
-            //   child: Row(
-            //     children: const [
-            //       Icon(
-            //         FontAwesomeIcons.circle,
-            //         color: Color.fromRGBO(255, 113, 150, 1),
-            //       ),
-            //       SizedBox(width: 15),
-            //       Text(
-            //         'Bong bóng chat',
-            //         style: TextStyle(
-            //           fontSize: 16,
-            //           fontWeight: FontWeight.bold,
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
             InkWell(
               onTap: () => showDialogDelete(chatRoom),
               child: Row(

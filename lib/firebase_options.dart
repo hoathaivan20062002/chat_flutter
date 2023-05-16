@@ -18,25 +18,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  // static const FirebaseOptions web = FirebaseOptions(
-  //   apiKey: 'AIzaSyCczVoRQ_mcYyZDN592Q9KLdtK7YZqWUdU',
-  //   appId: '1:229838833305:web:5dfac56fcf13b7cf269a08',
-  //   messagingSenderId: '229838833305',
-  //   projectId: 'chatapps-fe4b4',
-  //   authDomain: 'chatapps-fe4b4.firebaseapp.com',
-  //   databaseURL: 'https://chatapps-fe4b4-default-rtdb.asia-southeast1.firebasedatabase.app',
-  //   storageBucket: 'chatapps-fe4b4.appspot.com',
-  //   measurementId: "G-5B4X9VLF61"
-  // );
-
-  // static const FirebaseOptions android = FirebaseOptions(
-  //   apiKey: 'AIzaSyAoTB2BqZu_GsPoa3Z4gJJaCtzKb14Q90k',
-  //   appId: '1:229838833305:android:c5649178489e4ab3269a08',
-  //   messagingSenderId: '229838833305',
-  //   projectId: 'chatapps-fe4b4',
-  //   databaseURL: 'https://chatapps-fe4b4-default-rtdb.asia-southeast1.firebasedatabase.app',
-  //   storageBucket: 'chatapps-fe4b4.appspot.com',
-  // );
   static const FirebaseOptions web = FirebaseOptions(
       apiKey: 'AIzaSyCczVoRQ_mcYyZDN592Q9KLdtK7YZqWUdU',
       appId: '1:229838833305:web:5dfac56fcf13b7cf269a08',

@@ -4,7 +4,6 @@ import 'package:chat_app/chat/models/user.dart' as myuser;
 import 'package:chat_app/chat/widgets/message_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'loading_image.dart';
 
 class ShowInfoReaction extends StatefulWidget {

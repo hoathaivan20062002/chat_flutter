@@ -15,8 +15,6 @@ class SignUpController extends GetxController {
 
   //#region NAME
   var name = ''.obs;
-  // final RegExp nameRegex = RegExp(
-  //     r'(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})');
   String? nameValidator() {
     // if (!nameRegex.hasMatch(name.value)) {
     if (name.value.isEmpty) {
@@ -53,7 +51,9 @@ class SignUpController extends GetxController {
   }
 
   var passwordErrorText = Rx<String?>(null);
-  final String passwordHint = 'Mậtkhẩucó8chữvàsố'; ///gợi ý password
+  final String passwordHint = 'Mậtkhẩucó8chữvàsố';
+
+  ///gợi ý password
   //#endregion
 
   void validateAndSignUp() async {
@@ -127,18 +127,12 @@ class SignUpController extends GetxController {
       FadedOverlay.remove();
       Get.off(const VerifyPage());
       // show dialog for success registration, press btn to confirm and then navigate to sign in screen
-      // await Get.defaultDialog(
-      //     title: 'Successful registration',
-      //     middleText: 'Please check your mail box to verify your email',
-      //     onWillPop: () async {
-      //       Get.offAll(() => const SignIn());
-      //       return true;
-      //     });
     } on FirebaseAuthException catch (e) {
       FadedOverlay.remove();
       switch (e.code) {
         case 'email-already-in-use':
-          emailErrorText.value = 'Email này đã được sử dụng, hãy thử một email khác.';
+          emailErrorText.value =
+              'Email này đã được sử dụng, hãy thử một email khác.';
           break;
         case 'invalid-email':
           emailErrorText.value = 'Email không hợp lệ, hãy thử một email khác';

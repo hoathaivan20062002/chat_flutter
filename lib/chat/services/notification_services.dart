@@ -21,7 +21,6 @@ class NotificationServices {
       'you_can_name_it_whatever1',
       'channel_name',
       playSound: true,
-      // sound: RawResourceAndroidNotificationSound('notification'),
       importance: Importance.max,
       priority: Priority.high,
     );

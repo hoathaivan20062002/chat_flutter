@@ -1,20 +1,20 @@
 // TODO: improve UX
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../utils.dart';
 
 class SendVerificationLinkButton extends StatefulWidget {
   const SendVerificationLinkButton({Key? key}) : super(key: key);
 
   @override
-  State<SendVerificationLinkButton> createState() => _SendVerificationLinkButtonState();
+  State<SendVerificationLinkButton> createState() =>
+      _SendVerificationLinkButtonState();
 }
 
-class _SendVerificationLinkButtonState extends State<SendVerificationLinkButton> {
+class _SendVerificationLinkButtonState
+    extends State<SendVerificationLinkButton> {
   bool isLoading = false;
   bool enabled = true;
   final int timer = 60;
@@ -31,7 +31,9 @@ class _SendVerificationLinkButtonState extends State<SendVerificationLinkButton>
                 isLoading = true;
               });
               // TODO: bring user to app after click url
-              FirebaseAuth.instance.currentUser!.sendEmailVerification().then((value) {
+              FirebaseAuth.instance.currentUser!
+                  .sendEmailVerification()
+                  .then((value) {
                 setState(() {
                   isLoading = false;
                   enabled = false;
@@ -56,7 +58,9 @@ class _SendVerificationLinkButtonState extends State<SendVerificationLinkButton>
             }
           : null,
       child: enabled
-          ? (isLoading ? const CircularProgressIndicator() : const Text('Gửi lại liên kết xác minh'))
+          ? (isLoading
+              ? const CircularProgressIndicator()
+              : const Text('Gửi lại liên kết xác minh'))
           : Text('Vui lòng chờ ${counter}s thử lại'),
     );
   }

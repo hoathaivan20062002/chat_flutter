@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class _IconCreator extends StatelessWidget {
@@ -70,18 +69,6 @@ class BottomSheet extends StatelessWidget {
                     },
                   ),
                   const SizedBox(width: 40),
-                  // _IconCreator(
-                  //   icon: Icons.camera_alt,
-                  //   color: Colors.pink,
-                  //   text: "Máy ảnh",
-                  //   onTap: () async {
-                  //     try {
-                  //       final image = await ImagePicker()
-                  //           .pickImage(source: ImageSource.camera);
-                  //       if (image != null) {}
-                  //     } on PlatformException catch (_) {}
-                  //   },
-                  // ),
                   const SizedBox(width: 40),
                   _IconCreator(
                     icon: Icons.insert_photo,

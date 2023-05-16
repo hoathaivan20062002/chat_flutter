@@ -1,7 +1,6 @@
 import 'package:chat_app/auth/screens/log_in.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../services/auth.dart';
 import '../widgets/send_verification_link_button.dart';
 
@@ -14,8 +13,10 @@ class NotVerified extends StatelessWidget {
         onWillPop: _onWillPop,
         child: Scaffold(
             appBar: AppBar(title: const Text('Người dùng chưa được xác minh')),
-            body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Text('Tài khoản của bạn chưa được xác minh, vui lòng kiểm tra hộp thư của bạn để biết liên kết xác minh'),
+            body:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const Text(
+                  'Tài khoản của bạn chưa được xác minh, vui lòng kiểm tra hộp thư của bạn để biết liên kết xác minh'),
               ElevatedButton(
                   onPressed: () async {
                     await _onWillPop();
@@ -28,7 +29,7 @@ class NotVerified extends StatelessWidget {
 
 Future<bool> _onWillPop() async {
   await Auth.signOut();
-  Get.offAll(()=>const SignIn());
+  Get.offAll(() => const SignIn());
   return true;
 }
 
@@ -46,7 +47,8 @@ class _NeedHelpButton extends StatelessWidget {
             barrierDismissible: false,
             title: 'Hỗ trợ',
             content: Column(children: const [
-              Text('Bạn không tìm thấy Email? Vui lòng kiểm tra những nơi khác vd:hộp thư rác'),
+              Text(
+                  'Bạn không tìm thấy Email? Vui lòng kiểm tra những nơi khác vd:hộp thư rác'),
               Text('Hoặc'),
               SendVerificationLinkButton()
             ]),
