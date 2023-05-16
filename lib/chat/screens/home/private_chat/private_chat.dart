@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:chat_app/chat/controllers/user_item.dart';
 import 'package:chat_app/chat/widgets/profile_picture.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:get/get.dart';
 import 'bottom_sheet.dart' as bs;
-import '../../../../time/utils.dart';
 import '../../../controllers/private_chat.dart';
-import '../../../widgets/active_color.dart';
 
 class PrivateChat extends StatefulWidget {
   const PrivateChat(this.userId, {this.chatId, Key? key}) : super(key: key);
@@ -373,33 +370,6 @@ class _FriendTitle extends StatelessWidget {
                       fontSize: 15),
                 )),
             const SizedBox(height: 5),
-            Row(
-              children: [
-                Obx(() => Container(
-                      width: 12,
-                      height: 12,
-                      decoration: BoxDecoration(
-                        color: activeColor(controller.userData['is_active']),
-                        borderRadius: BorderRadius.circular(90),
-                        border: Border.all(color: Colors.white, width: 2),
-                      ),
-                    )),
-                const SizedBox(width: 5),
-                Expanded(
-                    child: Obx(() => Align(
-                        alignment: Alignment.centerLeft,
-                        child: AutoSizeText(
-                            controller.userData['is_active']
-                                ? 'active'.tr
-                                : fromLastSeen(
-                                    controller.userData['last_seen']),
-                            style: const TextStyle(color: Colors.grey),
-                            presetFontSizes: const [12, 10, 8, 6, 4],
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center))))
-              ],
-            )
           ]))
     ]);
   }
